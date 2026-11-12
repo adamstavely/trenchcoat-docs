@@ -8,9 +8,9 @@
 
 Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs and feedback. Each one ships in a Standard and a Clean style with the same props. Start here when you need a single control or widget.
 
-326 items · 326 files
+340 items · 340 files
 
-## Agents (44)
+## Agents (49)
 
 - [Agent Cursors](agent-cursors.md) – Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code they fix and comments beside the page
 - [Agent Findings](agent-findings.md) – A group of agents checking something – one row per agent with its progress, beside a feed of what they've found, newest first, with severity in words, filters and new findings announced
@@ -23,23 +23,27 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Agent Monitor](agent-monitor.md) – One agent at work as a compact card – its current step with a clock and the cost so far, a strip of steps sized by duration, the finished steps, and Pause and Stop
 - [Agent Plan](agent-plan.md) – An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step
 - [Agent Queue](agent-queue.md) – The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or Failed, while a depth chart shows the backlog build up when a rate limit pauses the workers and drain when they resume
+- [Agent Recap](agent-recap.md) – What your agents did while you were away, for a home page – a small chart of the period with a bar per 15 or 30 minutes stacked by done, failed and needs you and a marker on each notable event, then Needs you, Failed and Done as columns acted on in place, items gliding out as they're handled, and Clear done
 - [Agent Steering](agent-steering.md) – Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away
 - [Agent Tree](agent-tree.md) – Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line
 - [Approval Card](approval-card.md) – An agent asks before it acts – risk badge, preview with an optional diff or arguments, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row
 - [Approval Gates](approval-gates.md) – The approval requests of one agent run as a stack of cards – the one to decide now on top with who asks, the diff or arguments and the steps it holds; approve, reject or ask for changes with a note, and it drops into the decided list while the next rises
 - [Artifact Panel](artifact-panel.md) – Everything a run produced in one place – files, code, documents and images with a preview for each, versions you can diff, and download
 - [Autonomy Dial](autonomy-dial.md) – How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks
+- [Away Summary](away-summary.md) – The "while you were away" card at the top of a chat thread – how long you were gone, then what needs you with its action, what failed with Retry, and what's done folded to a count, Mark all seen, and one quiet line when nothing happened
 - [Budget Guard](budget-guard.md) – Spend and token limits for a live run – progress against the cap, a warning as it nears it, a hard stop at it, and raising the cap right from the warning
 - [Collaboration Stream](collaboration-stream.md) – What agents say to each other in a run, as a quiet chat – who to whom on every message, handoffs as slim rows, questions for you with an answer box, files that preview, details with tool calls, filter tabs and an @-composer
 - [Conflict Radar](conflict-radar.md) – Which parallel agents touch the same files and where they collide – a grid of files by agents, conflicts first, status in words, and who changed which lines
 - [Context Map](context-map.md) – What fills an agent's context window, as a living treemap – system prompt, tools, memory, every file, the chat and tool results as tiles that glide as it grows, the free space dashed, and compaction squeezing old turns into a summary
 - [Context Window](context-window.md) – What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear
+- [Decision Card](decision-card.md) – One question an agent needs answered before it carries on, docked above the composer – how long it has waited, numbered options with one recommended (focused, never picked), 1–9 to pick, Something else, or Approve and Decline with a reason, a queue to step through, and a receipt with Undo
 - [Decision Inbox](decision-inbox.md) – Open decisions with two quick answers each – answered ones confirm and fold away
 - [Decision Tree](decision-tree.md) – An agent stuck on a decision lays out its options as a tree – the consequences of each branch, the risky ones marked, its own pick highlighted – and you choose a path or write your own
 - [Delegate Board](delegate-board.md) – Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first
 - [Fallback Chain](fallback-chain.md) – One request finding a model that answers, as a small flow – each model in fallback order, waiting, trying, failed, answered or skipped, with reasons and timings
 - [Fan-out Grid](fan-out-grid.md) – One agent hands a big job to many workers – every task a cell on a live grid that fills in as they get through it, with retries, failures, cost and the time left, and the details of any task on hover
 - [Handoff](handoff.md) – The agent hands the task to you mid-run – what it did, why it stopped and what it needs – and takes it back when you're done
+- [Judge Bracket](judge-bracket.md) – How an LLM judge picks the best of several attempts, as a tournament – matches that fill as verdicts stream in, the winner moving on along its connector and the loser stepping back, any match's two answers with the judge's reason and confidence, and the champion to use
 - [Live View](live-view.md) – Watch the agent's screen as it works – its clicks and typing drawn on top, a caption for each step, and Pause or Take over at any moment
 - [Parallel Attempts](parallel-attempts.md) – An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another
 - [Permission Request](permission-request.md) – An agent asks for one specific right – who, why and exactly what will happen – and you allow it once, for an hour or always; then it folds into one line with the time left and Revoke
@@ -48,6 +52,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Root Cause Tree](root-cause-tree.md) – How an agent finds out why something failed, as a fault tree – hypotheses with their evidence ruled out one by one, OR and AND branches, and the way from the confirmed cause up to the failure lit
 - [Run Checkpoints](run-checkpoints.md) – A run's restore points on a timeline – what each one captured, what going back discards, and “go back to step 4 and try again”, with earlier attempts kept as branches
 - [Run Compare](run-compare.md) – Two runs or two prompt versions side by side – outputs, steps, cost and time, with every difference highlighted
+- [Running Now](running-now.md) – A live status of agents' background tasks for a header or sidebar – one quiet pill, "3 running · 2 need you", opening a panel of tasks under Needs you, Running and Recently done, each with a filling ring, its agent, elapsed time and Review, Stop or Open
 - [Sandbox Log](sandbox-log.md) – Command output from the agent's sandbox – a block per step with the command, exit code and time, streaming text in colour, copy and search, fast with long logs
 - [Scheduled Runs](scheduled-runs.md) – Agent tasks placed into a week's sessions under usage limits – pinned first, big tasks split into linked parts, small ones filling gaps, and an Unscheduled list
 - [Subagent List](subagent-list.md) – The sub-agents a session started, grouped Active and Done with counts – each with its own drawn mark, what it's doing now, and a clock that ticks while it runs or how long ago it finished; waiting and failed in words, choose one to open it
@@ -74,7 +79,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Retrieval Settings](retrieval-settings.md) – Chunking, top-k, a score threshold, keyword ↔ vector balance, reranking and metadata filters, edited on a picture of the pipeline, with the app's cost and latency
 - [Tool Configuration](tool-configuration.md) – A tool as its API reference entry: name as the title, signature and description, a doc table of parameters edited in place, an example call and the JSON Schema, with the approval it needs
 
-## AI & chat (43)
+## AI & chat (46)
 
 - [Agent Face](agent-face.md) – Donovan's animated face, which shows what the agent is doing – nine states that blend on springs, blinks and glances, a nod or a hop, sharp from 16 to 256 px and resting when it isn't busy
 - [AI Answer](ai-answer.md) – Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups
@@ -90,6 +95,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Comments Panel](comments-panel.md) – Comment feed with filters, runnable /edit commands, resolve and a composer
 - [Context Tray](context-tray.md) – What the model can see, as chips – files, @-mentions and sources, each with its token weight; pin or remove them and watch the total against the window
 - [Conversation Branches](conversation-branches.md) – Edit a past message and the conversation forks – a 2 / 3 switcher on the edited message, and each branch's replies below it
+- [Diff Table](diff-table.md) – An AI's proposed edits to a table, reviewed in place – old values struck and new ones marked, added and removed rows, accept or reject per edit, per row or all, undo, a popover with the reason, and edits that sweep in while streaming
 - [Digest](digest.md) – A one-minute digest of a pile of information, arranged around what the reader needs – what matters, what to do (ticked off as you go), what changed and what's safe to ignore, with a reading-time estimate and points that cite their sources
 - [Email Draft](email-draft.md) – Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo
 - [Extraction Review](extraction-review.md) – Fields pulled from a document, each linked to its place on the page – confidence per field, accept, correct or reject, field by field from the keyboard
@@ -97,6 +103,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [File Summary](file-summary.md) – What's in a file without opening it – an AI summary that streams in, key points citing their pages or times, the people, organisations, dates and amounts it mentions, and Copy, Regenerate and Open file
 - [Generated UI](generated-ui.md) – A model's answer drawn as real components – tables, charts, metrics, forms and callouts from a spec, checked as it arrives, with plain text for anything unknown
 - [Guardrail Notice](guardrail-notice.md) – When a policy blocks, redacts or rewrites content – which policy, why, what changed with personal data masked, and a way to ask for review
+- [Image Generation](image-generation.md) – One image while it's generated – its place in the queue, then the picture taking shape in a frame of the image's own shape as a blurred preview or colour field clears, the step, percentage and time left, the image fading in when it's done or why it failed with Try again, the prompt with Show more, and Cancel, Download, Regenerate and Copy prompt
 - [Image Grid](image-grid.md) – Generated images as a grid of variations – upscale, regenerate one tile, compare two, download, and alt text for every image
 - [Inline Diff](inline-diff.md) – AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo
 - [JSON Viewer](json-viewer.md) – A JSON document laid out for review – Document, Tree and Raw views, search across them, flags with notes on fields, Copy and Download – inline or as a dialog
@@ -105,6 +112,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Message Actions](message-actions.md) – The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer
 - [Message Status](message-status.md) – The quiet row under a sent message – a read receipt from sending to delivered to read (or Not sent with Retry), a relative time that keeps itself fresh, and Copy, Send again, Branch into a new chat and Edit
 - [Model Picker](model-picker.md) – The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price
+- [Pixel Loader](pixel-loader.md) – A small working row – a 5 × 5 grid of dots lit in a wave, a snake, a twinkle or an orbit, a shimmering label and the time since the work started, settling into a check or a cross when it ends
 - [Prompt Library](prompt-library.md) – Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled
 - [Prompt Starters](prompt-starters.md) – Where to begin, and what to ask next – suggestions for an empty chat and follow-ups after an answer, from the conversation's context
 - [Response Selection](response-selection.md) – Select part of a model's answer and act on it – reply quoting it, ask why, or request an edit that comes back as a diff to accept or reject
@@ -120,8 +128,9 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Voice Mode](voice-mode.md) – A spoken conversation with the model – live transcript, listening and speaking states, interrupt, mute and end, with captions for every turn
 - [Writing Assistant](writing-assistant.md) – AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation
 
-## Data & charts (21)
+## Data & charts (23)
 
+- [Active Days](active-days.md) – A daily goal month by month – each day's date in a small ring filled towards the goal, a check when it's met, months running on down with their names sticking, the month's days at goal, best streak and busiest weekday, and any day's value and share of the goal on hover or focus
 - [Activity Calendar](activity-calendar.md) – A year of activity at a glance – a square per day in a column per week, shaded by how much happened, with month and weekday names, the total, and any day's value on hover or focus
 - [Activity Clock](activity-clock.md) – When activity happens, a clock per day – an AM ring and a PM ring of hour segments shaded by how busy each hour was, the weekday and date in the middle, and any hour's value there on hover or focus
 - [Billing Schedule](billing-schedule.md) – Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals
@@ -139,6 +148,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Ops Overview](ops-overview.md) – An operations overview in one dense strip – a status line, a health pill and count tiles, each with its change since the last period in words and green or red by which way is good, an optional sparkline and tone, optionally opening what it counts
 - [Project Card](project-card.md) – A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover
 - [Radar Chart](radar-chart.md) – A few measures on axes round a centre, joined into a shape – one series with its value on each axis, or up to three compared – as a cross of axes or a web of rings, with a table view
+- [Score Ring](score-ring.md) – One overall score from weighted sub-scores – a ring with a segment per part as long as its weight and filled to its score, the score and its band in the middle, a row per part that isolates its segment, and the metrics behind the score
 - [Score Summary](score-summary.md) – NPS or CSAT results – the score in big type, the change since last time with a sparkline, the target, the bands with shares and counts, and a bar per score you can pick to filter comments
 - [SLA Status](sla-status.md) – How well service levels are met – the share on time, a Met / At risk / Breached split in words and marks, a weekly trend, a bar per type of request with a readout, and a period chooser
 - [Sparkline](sparkline.md) – A small trend chart that sits in text or a table cell – line, area, bars or win-loss, sized from the text – with markers, a reference line, a tone for which way it went and, when interactive, a tooltip per point
@@ -157,7 +167,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Tips Panel](tips-panel.md) – Grid of short tips with one action each – taken tips turn into a done state
 - [Toaster](toaster.md) – Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss
 
-## Inputs & controls (40)
+## Inputs & controls (41)
 
 - [App Picker](app-picker.md) – The app launcher for a suite header – a grid button that opens your apps as tiles, with pinned and recent apps, search, the current app marked and arrow keys that move in two dimensions
 - [Breadcrumbs](breadcrumbs.md) – Where you are in a hierarchy as a trail of links: the current page last, the middle folding into "…" when it doesn't fit or passes `max`, a cancelable `tc-navigate` for routing, and Copy path
@@ -188,6 +198,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Sensitivity Label Picker](sensitivity-label-picker.md) – Sets a file's classification – a mark and word on a small button, a list of labels with what each means, and a reason asked before lowering it
 - [Share Panel](share-panel.md) – Share with people and groups at a level for each – every recipient checked for entitlement first, with anyone not authorized flagged, the person sharing told, and left out of the share.
 - [Side Nav](side-nav.md) – An app's main navigation down the side – brand, places with icons and badges in sections, the current page, real links with a cancelable `tc-navigate` for routing, a footer of the page's own and a fold into an icon-only rail
+- [Signature Pad](signature-pad.md) – A form field for signing – draw with a mouse, pen or finger in ink that follows speed and pressure, or type the name in a script face; undo and clear, the signer, the date and a statement below, submitted with the form, and exported as SVG or an image
 - [Slider Field](slider-field.md) – A synchronized slider and numeric input
 - [Stepper Form](stepper-form.md) – A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state
 - [Switch](switch.md) – An accessible on/off setting
@@ -262,7 +273,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Saved Search Alerts](saved-search-alerts.md) – Saved searches that tell you about new matches – “12 new since Tue”, how often and where each one checks, pause, Run now, remove with Undo, and Add alert from the current search
 - [Search History](search-history.md) – Recent and saved searches – tabs with counts, a filter, searches grouped by day with scope chips, result counts and times, and Run again, a save star and Remove with Undo on each
 
-## Workspace & sessions (24)
+## Workspace & sessions (25)
 
 - [Branch Switcher](branch-switcher.md) – the current branch with ahead/behind counts and a filterable list of worktrees, local and remote branches to switch to or create from.
 - [Change List](change-list.md) – Proposed code changes as compact rows – state, title, where it is, lines added and removed, and its checks, with a menu per row and Show more.
@@ -273,6 +284,7 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Element Inspector](element-inspector.md) – A page's elements as a tree written like the markup, beside the chosen element's box model and styles; hovering an element fires an event so the page can outline it in a preview.
 - [Environment List](environment-list.md) – Where a session runs, as rows of machine, folders, repository and branch, each with an optional small action or a switch.
 - [File Tree](file-tree.md) – A project's files – folders that fold, a filter, an icon per kind of file and a Git status, with search inside files left to the page
+- [Fine-tune Card](fine-tune-card.md) – An inspector where an agent tunes a design and the person takes over – numbers you drag or type, a percentage, a choice and swatches over a live preview, the agent's changes counted in and marked, and a revert
 - [Icon Rail](icon-rail.md) – A row of icon buttons for a panel – one chosen, a tooltip on each, one tab stop, and an optional More menu.
 - [Meter Row](meter-row.md) – How full something is on one line – a label, a percentage and a tiny bar, with a mark and a word when it's getting full; can open the details or sit compact beside a value.
 - [Network Log](network-log.md) – The requests a web page made: status, method, name, size, time and a waterfall, with type chips and a detail of headers and response.
@@ -289,13 +301,13 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Terminal](terminal.md) – A command line for a panel – output in colour above a prompt with history, Ctrl+C and Ctrl+L; the page runs the commands
 - [Web Vitals](web-vitals.md) – A tile per measure (LCP, INP, CLS, FCP, TTFB or the page's own) with its value, a Good / Needs improvement / Poor word, a three-zone track and earlier readings, plus an optional Mobile / Desktop switch.
 
-## Charts (37)
+## Charts (39)
 
 - [Area Chart](area-chart.md) – Totals and their make-up over time as filled areas – stacked, stacked to 100% or overlapping – with names at their ends, the nearest month read across every series, and a table view
 - [Bar Chart](bar-chart.md) – Values by category as bars – grouped, stacked or stacked to 100%, upright or lying down – the highest one emphasised, values at the bars' ends, bars that grow in and glide when the data changes, and a table view
 - [Beeswarm Chart](beeswarm-chart.md) – A distribution point by point – every value a dot pushed clear of the others, in one row or a row per group with its median marked – the highest group emphasised, dots that grow in, and a canvas for thousands of points
 - [Box Plot](box-plot.md) – How values spread within each group – quartile boxes with medians, whiskers to 1.5 IQR and outlier rings, or violins, or both – the highest median emphasised, boxes that open from their medians, and a table view
-- [Bubble Chart](bubble-chart.md) – Points by two values with a third as the circle's area, or a scatter plot without it – the largest emphasised and named where names fit, the circle under the pointer picked, and a canvas for thousands of points
+- [Bubble Chart](bubble-chart.md) – Points by two values with a third as the circle's area, or a scatter plot without it – the largest emphasised and named where names fit, points by group with a legend that isolates, hides and shows each group, stat tiles under it, and a canvas for thousands of points
 - [Bullet Chart](bullet-chart.md) – Each measure against its target and poor–fair–good ranges, one row each – the one furthest behind in the accent, its own scale or one shared, quiet or status-tinted bands, values at the right
 - [Bump Chart](bump-chart.md) – How items' ranks change step to step, one line each with first place on top – ranks given or worked out from values, the biggest climber in the accent, names at both ends, lines that draw in and glide
 - [Calendar Heatmap](calendar-heatmap.md) – An amount per day on a grid of weeks, each day shaded from light to the full accent, the busiest outlined, a year per row over several years, a scale legend, weeks that fade in, a canvas for long ranges, and a table view
@@ -315,19 +327,21 @@ Self-contained UI pieces – agent views, chat and answer UIs, charts, inputs an
 - [Parallel Chart](parallel-chart.md) – Parallel coordinates: rows as lines across a vertical axis per measure, each on its own scale, axes that can run upside down, one row emphasised and named, gaps for missing values, a canvas for many rows, and a table view
 - [Pareto Chart](pareto-chart.md) – Which few items make most of a whole – bars from the largest down, the running share as a line across them, a dashed 80% threshold, the bars that reach it emphasised and their share beside the line, with a table view
 - [Pie Chart](pie-chart.md) – A few shares of a whole as slices, each in its own ink or one emphasised, the shares written beside them and the pointed-at slice lifting out
-- [Radial Bar Chart](radial-bar-chart.md) – A few ratios as rings round a centre, each filled towards its target – the largest emphasised, each named with its value where its ring starts, or the emphasised value in a full circle's middle – rings that sweep round in turn
+- [Radial Bar Chart](radial-bar-chart.md) – A few ratios as rings round a centre, each filled towards its target – the largest emphasised, each named with its value where its ring starts, or activity rings with a lap past each target and a tile per ring – rings that sweep round in turn
 - [Ridgeline Chart](ridgeline-chart.md) – How values spread across many groups as overlapping density ridges, each with a tick at its median – the highest median emphasised, sortable by median, ridges that rise and reshape when the data changes, and a table view
 - [Rose Chart](rose-chart.md) – A polar area (Nightingale rose) chart: equal-angle wedges whose area shows each value, the largest emphasised, stacked by series with a legend if wanted, with round-value rings.
 - [Sankey Chart](sankey-chart.md) – How an amount flows between stages – nodes in columns by step, flows as bands as wide as their value, one node and its flows in the accent, a node's or flow's path lit on hover, and a table view
 - [Segmented Bar](segmented-bar.md) – Shares of one whole as a single bar cut into parts, with a list of names, values and shares – largest first in the accent, the rest in quiet shades or chart inks, tall or thin, parts that grow and glide
 - [Slope Chart](slope-chart.md) – How each item changed between two moments, as lines from first value to last, the biggest rise emphasised, names and values nudged apart on both sides, lines that draw themselves in, and a table view
 - [Small Multiples](small-multiples.md) – One chart repeated in a grid, a panel per value of a field – any chart a spec can draw – on a shared scale, with one legend, linked pointing and columns that fit the width.
+- [Stage Bars](stage-bars.md) – A funnel as a list – a rounded pill per stage sized to its share of the first, the count and share beside it, a headline that follows the pointer with the change chip, stat tiles, an optional period switch that re-grows the pills, and a table view
 - [Stream Graph](stream-graph.md) – Several series flowing over time, stacked round a moving centre line – the largest emphasised against shades of the quiet ink, layers ordered inside-out and named beside their ends – every series read at the nearest x
 - [Sunburst Chart](sunburst-chart.md) – A hierarchy as rings, top level innermost – the largest leaf and its path to the centre emphasised, outer names and shares beside the circle, inner names on card-coloured chips, rings that sweep round in turn
 - [Treemap](treemap.md) – Parts of a whole as squarified tiles sized by value, nested under group headers with their shares – the largest emphasised, names and shares on card-coloured chips in tiles big enough, tiles that grow in and glide on change
 - [Venn Diagram](venn-diagram.md) – How two or three sets overlap, as circles sized by the sets, with each region's own count on a chip and the three largest drawn when there are more.
 - [Waffle Chart](waffle-chart.md) – Shares of a whole as a grid of 100 cells, one category emphasised with its share written large beside it, the rest in the chart inks with a legend, cells that pop in one by one and a share that counts up, and a table view
 - [Waterfall Chart](waterfall-chart.md) – How a starting figure becomes an ending one – steps up and down bridged by dashed connectors, totals on the baseline, rises and falls in the status inks with a legend, signed changes beside each bar and a table view
+- [Week Bars](week-bars.md) – A week of daily totals as rounded bars against a dashed goal line – days that reach it in the accent, the week's total counting up with the average per day, a week switcher the bars glide between, today marked, and a table view
 
 ## Trust & calibration (37)
 

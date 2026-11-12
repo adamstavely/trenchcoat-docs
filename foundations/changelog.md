@@ -2,6 +2,49 @@
 
 # Changelog
 
+## Unreleased – Markdown docs kept in step
+
+- **`docs/` checked in CI:** a PR fails when `docs/` doesn't match the gallery (`npm run check:docs-md`), and the
+  new-component integration pass now exports it, so every new component's page is in `docs/`.
+- **Mirrored to trenchcoat-docs:** a merge to `main` that changes `docs/` or the standalone gallery copies both to the
+  [trenchcoat-docs](https://github.com/adamstavely/trenchcoat-docs) repo.
+
+## 0.21.0 – Image Generation
+
+- **Image Generation:** one image while it's generated – its place in the queue, then the picture taking shape in a
+  frame of the image's own shape as a blurred preview or colour field clears, with the step, percentage and time left;
+  the image fading in when it's done, or why it failed with Try again; the prompt, and Cancel, Download, Regenerate and
+  Copy prompt. Image Grid shows variations; this is the one image on its way.
+- **Standalone gallery and `docs/`:** rebuilt with it.
+
+## 0.20.0 – Agent attention pieces and confetti
+
+- **Decision Card:** one question an agent needs answered, docked above the composer – numbered options with one
+  recommended, 1–9 to pick, Approve / Decline with a reason, a queue, and a receipt with Undo.
+- **Away Summary:** the "while you were away" card at the top of a chat thread – what needs you, what failed, what's done.
+- **Agent Recap:** the same for a home page – a stacked chart of the period with notable events marked, and Needs you,
+  Failed and Done acted on in place. Agent Inbox's recap view is part of its inbox; this is a card of its own.
+- **Judge Bracket:** how an LLM judge picks the best of several attempts, as a tournament that fills as verdicts stream in.
+- **Running Now:** a header pill, "3 running · 2 need you", opening a panel of agents' background tasks.
+- **Confetti (motion):** a celebration burst from what it wraps or the top of the viewport, on one canvas that's removed
+  when it settles; a brief tint instead under reduced motion.
+- **Standalone gallery and `docs/`:** rebuilt with the new pieces.
+
+## 0.19.0 – Charts, AI pieces, a signature pad and transitions
+
+- **Charts:** Stage Bars (a funnel as a list of pills, with stat tiles and a period switch), Week Bars (a week of daily
+  totals against a goal, with a week switcher), Score Ring (one score from weighted sub-scores) and Active Days (a daily
+  goal month by month, a small ring per day).
+- **Bubble Chart:** points by group, with a legend that isolates, hides and shows each group, and stat tiles under it.
+- **Radial Bar Chart:** `variant="rings"` – activity rings with a lap past each target and a tile per ring.
+- **AI:** Diff Table (an AI's proposed edits to a table, reviewed in place), Pixel Loader (a pixel-grid working row with
+  the time elapsed) and Fine-tune Card (an inspector where an agent tunes a design and the person takes over).
+- **Signature Pad:** a form field for signing – drawn or typed, undo and clear, exported as SVG or an image.
+- **Motion:** Badge Pop, Banner Stack, Dissolve Clear, Error Shake, Icon Swap, Like Burst, Menu Morph, Page Slide,
+  Sliding Indicator and Stack Spread.
+- **Standalone gallery and `docs/`:** rebuilt with every new piece – 471 Markdown pages, and a 27 MB single-file gallery.
+- **new-component skill:** `add-to-gallery.mjs` writes categories to `app/src/catalog.ts`, where they moved in 0.18.0.
+
 ## 0.18.0 – The gallery's pages as Markdown
 
 - **`docs/`:** every page of the gallery as a Markdown file – 453 of them: the overview, one index per library, each
@@ -1737,7 +1780,7 @@ named parts.
 
 ## Unreleased – one API contract (code-quality Phase 3)
 
-Every component built from `src/components/` now follows the contract in [CONTRIBUTING.md](https://github.com/adamstavely/legendary-chainsaw/blob/main/trenchcoat/CONTRIBUTING.md):
+Every component built from `src/components/` now follows the contract in [CONTRIBUTING.md](../../CONTRIBUTING.md):
 controlled/uncontrolled state through one rule, `className`/rest props/`ref` on the root, promise-aware async
 callbacks, hydration-safe rendering, form fields on inputs, opt-out shortcuts and `useId` ids.
 
