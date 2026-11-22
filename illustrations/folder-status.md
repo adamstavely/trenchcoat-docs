@@ -2,69 +2,79 @@
 
 [← Illustrations](README.md)
 
-# Downloading
+# Folder Status
 
 **Illustrations** · New
 
-A document with an arrow dropping into a tray on it, with the words Downloading, for a file or an export on its way to the person
+A folder scene for where a folder stands – empty, shared, syncing, archived, locked or restricted – each with its own badge, colour, finite motion and words, which follow the status unless `caption` sets its own
 
-- **Element:** `<tc-downloading>`
-- **Size:** 5.1 KB gzip · 13.7 KB min, on a page that has Lit · [Performance](#performance)
+- **Element:** `<tc-folder-status>`
+- **Size:** 6.3 KB gzip · 18.0 KB min, on a page that has Lit · [Performance](#performance)
 - **Works in:** Chrome / Edge 123+, Firefox 120+, Safari 17.5+ · [Browser support](#browser-support)
 
 |  | Install and import |
 | --- | --- |
 | Install | `npm install @adamstavely/trenchcoat` [from GitHub Packages](../foundations/getting-started.md), then `import "@adamstavely/trenchcoat/tokens.css"` once |
-| HTML | `import "@adamstavely/trenchcoat/downloading";` |
-| React / Next.js | `import "@adamstavely/trenchcoat/downloading";` · no wrapper: use the tag |
-| Vue / Nuxt | `import "@adamstavely/trenchcoat/downloading";` · tags starting with tc- are custom elements |
-| Angular | `import { Downloading } from "@adamstavely/trenchcoat/angular/downloading";` · standalone directives, no schema |
-| Svelte | `import "@adamstavely/trenchcoat/downloading";` |
+| HTML | `import "@adamstavely/trenchcoat/folder-status";` |
+| React / Next.js | `import "@adamstavely/trenchcoat/folder-status";` · no wrapper: use the tag |
+| Vue / Nuxt | `import "@adamstavely/trenchcoat/folder-status";` · tags starting with tc- are custom elements |
+| Angular | `import { FolderStatus } from "@adamstavely/trenchcoat/angular/folder-status";` · standalone directives, no schema |
+| Svelte | `import "@adamstavely/trenchcoat/folder-status";` |
 
 ## Example
 
-The live example is in the gallery at `#/illustrations/downloading`, at 320 px, 480 px or full width, with “Show anatomy” to number its parts.
+The live example is in the gallery at `#/illustrations/folder-status`, at 320 px, 480 px or full width, with “Show anatomy” to number its parts.
 
 ## Overview
 
-A document with a round badge showing an arrow dropping into a tray, for a file or an export on its way to the person,
-with the words Downloading. It's drawn like the workflow stages beside `awaiting-review` – in translation, in quality
-control, in coordination, pending release and released – so a file being fetched reads the same way as work moving
-along. On the badge, the arrow drops into the tray a few times, then it rests.
+A folder scene that says where a folder stands, in the soft style of the state illustrations: a pastel folder (its back with the tab and its front flap), one pastel badge with a darker edge and ink, a soft glow beneath, and its words as real text under the drawing. `status` picks it:
+
+| `status` | Scene | Colour | Motion | Default words |
+|---|---|---|---|---|
+| `empty` | An open folder with nothing in it | Slate | The front flap eases open a few times | Empty folder |
+| `shared` | Two small people on the badge | Blue | The badge settles a few times | Shared folder |
+| `archived` | A box with an arrow going into it on the badge | Slate | The arrow drops a few times | Archived |
+| `locked` | A small padlock badge on the folder's corner | Amber | The lock settles a few times | Locked folder |
+| `syncing` | Circular arrows on the badge | Blue | The arrows turn a few times | Syncing |
+| `restricted` | A shield on the badge | Red | The badge settles a few times | Restricted folder |
+
+The words follow the status unless `caption` sets its own.
 
 ### When to use
 
-- An export or report being prepared and sent to the person: "Your audit export is downloading".
-- A file being fetched before it can be opened, where the wait is long enough to need saying.
+- A folder with nothing in it yet (`empty`), beside how to add the first file.
+- A folder others can see or edit (`shared`), with who it's shared with.
+- A folder kept for the record but out of the way (`archived`), with how long it's kept and how to restore it.
+- A folder people can't open right now (`locked`) – a legal hold, a permission – with who to ask.
+- A folder that's copying to or from another system (`syncing`), with how far it's got.
+- A folder whose contents carry a classification (`restricted`) – who may see it, not whether it's shut – beside the classification in words (see `sensitivity-label-picker`).
 
 ### When not to use
 
-- A file going up from the person – use [Uploading](uploading.md).
-- Work being done on the server with nothing coming back yet – use [Processing](processing.md).
-- A short wait inside a button or a row – use a spinner or a progress bar; this is for a page or a panel.
+- An inbox, queue or upload – use [Tray Status](tray-status.md).
+- A single document's place in a workflow – use the document-status illustrations.
+- The folder's contents – use [File Tree](../components/file-tree.md).
 
 ## Anatomy
 
 *Turn on “Show anatomy” on the example to see each part numbered on the live component.*
 
-1. **Page** `.ui-dnl-page` – the document
-2. **Mark** `.ui-dnl-badge` – the round badge, with the tray and the arrow drawn on it in ink
-3. **Words** `.ui-dnl-caption` – what's happening; the default is Downloading
+2. **Mark** `.ui-fds-badge` – the round badge, with people, a box, a padlock, turning arrows or a shield in ink (`empty` has none)
+3. **Words** `.ui-fds-caption` – where the folder stands; the default follows the status
 
 ## Looks
 
-One look. Colours follow the page theme through `light-dark()`, with a `.dark` class, `data-theme`, `data-tc-theme` or
-the system setting. It has no background of its own, so it takes on whatever it sits on.
+One look. Colours follow the page theme through `light-dark()`, with a `.dark` class, `data-theme`, `data-tc-theme` or the system setting, and each status has its own badge colour. It has no background of its own, so it takes on whatever it sits on.
 
 ## Usage
 
 ### HTML
 
 ```html
-<tc-downloading></tc-downloading>
+<tc-folder-status status="locked"></tc-folder-status>
 
 <script type="module">
-  import "@adamstavely/trenchcoat/downloading";
+  import "@adamstavely/trenchcoat/folder-status";
   import "@adamstavely/trenchcoat/tokens.css";
 </script>
 ```
@@ -72,11 +82,11 @@ the system setting. It has no background of its own, so it takes on whatever it 
 ### React / Next.js
 
 ```tsx
-import { Downloading } from "@adamstavely/trenchcoat/react";
+import { FolderStatus } from "@adamstavely/trenchcoat/react";
 import "@adamstavely/trenchcoat/tokens.css";
 
-export function State() {
-  return <Downloading />;
+export function FolderState({ locked }: { locked: boolean }) {
+  return <FolderStatus status={locked ? "locked" : "shared"} />;
 }
 ```
 
@@ -84,13 +94,13 @@ export function State() {
 
 ```vue
 <script setup lang="ts">
-import "@adamstavely/trenchcoat/downloading";
+import "@adamstavely/trenchcoat/folder-status";
 import "@adamstavely/trenchcoat/tokens.css";
 
 </script>
 
 <template>
-  <tc-downloading></tc-downloading>
+  <tc-folder-status></tc-folder-status>
 </template>
 ```
 
@@ -100,14 +110,14 @@ import "@adamstavely/trenchcoat/tokens.css";
 
 ```ts
 import { Component } from "@angular/core";
-import { Downloading } from "@adamstavely/trenchcoat/angular/downloading";
+import { FolderStatus } from "@adamstavely/trenchcoat/angular/folder-status";
 
 @Component({
-  selector: "app-downloading-example",
-  imports: [Downloading],
-  template: `<tc-downloading></tc-downloading>`,
+  selector: "app-folder-status-example",
+  imports: [FolderStatus],
+  template: `<tc-folder-status></tc-folder-status>`,
 })
-export class DownloadingExample {
+export class FolderStatusExample {
 }
 ```
 
@@ -117,14 +127,14 @@ export class DownloadingExample {
 
 ```svelte
 <script lang="ts">
-  import "@adamstavely/trenchcoat/downloading";
+  import "@adamstavely/trenchcoat/folder-status";
   import "@adamstavely/trenchcoat/tokens.css";
-  import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";
+  import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";
 
-  let el: TcDownloading;
+  let el: TcFolderStatus;
 </script>
 
-<tc-downloading bind:this={el}></tc-downloading>
+<tc-folder-status bind:this={el}></tc-folder-status>
 ```
 
 *Generated from the element's API and compiled in `examples/svelte` by `npm run check:snippets`. The Frameworks section below covers events, control, slots, server rendering and types.*
@@ -135,29 +145,22 @@ export class DownloadingExample {
 
 | Property | Attribute | Type | Default | Description |
 | --- | --- | --- | --- | --- |
-| `caption` | `caption` | `string` | `"Downloading"` | The words under the drawing; "" leaves them out |
-| `label` | `label` | `string` | `""` | Accessible description, when it should say more than `caption` |
+| `status` | `status` | `FolderStatusKind` | `"empty"` | Where the folder stands: "empty", "shared", "syncing", "archived", "locked" or "restricted" |
+| `caption` | `caption` | `string \| undefined` | `undefined` | The words under the drawing; unset, the status's own words; "" leaves them out |
+| `label` | `label` | `string` | `""` | Accessible description, when it should say more than the words |
 
-#### Component tokens
+#### Design tokens it reads (2)
 
-*Custom properties on the element – set them on the element or an ancestor to adjust it.*
+`--tc-ease-standard`, `--tc-font-sans`
 
-| Custom property | Value | Look |
-| --- | --- | --- |
-| `--tc-downloading-page` | `light-dark(#ffffff, #2a2a2e)` | both |
-| `--tc-downloading-edge` | `light-dark(#e4e7ec, rgba(255, 255, 255, 0.1))` | both |
-| `--tc-downloading-fold` | `light-dark(#eef1f5, #35373d)` | both |
-| `--tc-downloading-line` | `light-dark(#e6e9ee, #44464d)` | both |
-| `--tc-downloading-mark` | `light-dark(#d6eef8, #1c3f52)` | both |
-| `--tc-downloading-mark-edge` | `light-dark(#7cc1e0, #5aaed4)` | both |
-| `--tc-downloading-ink` | `light-dark(#1b6a8c, #cdeaf7)` | both |
-| `--tc-downloading-glow` | `light-dark(rgba(90, 170, 215, 0.24), rgba(90, 170, 215, 0.12))` | both |
-| `--tc-downloading-soft` | `12px` | both |
-| `--tc-downloading-beat` | `3.2s` | both |
+#### Functions
 
-#### Design tokens it reads (6)
+*Exported from the module next to the element.*
 
-`--tc-ease-standard`, `--tc-font-sans`, `--tc-font-size-md`, `--tc-font-weight-medium`, `--tc-line-height-tight`, `--tc-text-primary`
+| Function | Description |
+| --- | --- |
+| `folderStatusWords: Record<FolderStatusKind, string>` | The words for each status, when `caption` isn't set |
+| `folderCss(o: { ui: string; name: string; statuses: FolderStatusKind[] }): void` | The CSS for a folder element: `statuses` lists the scenes it can draw. With several, each status's colours and motion apply under its own [status]. `name` names the custom properties (`--tc-<name>-mark` …); `ui` is the class prefix. |
 
 ## Frameworks
 
@@ -175,7 +178,7 @@ export class DownloadingExample {
 
 *Everything it takes is a string, number or boolean, so attributes work too.*
 
-*Also attributes: `caption`, `label` – see the API table.*
+*Also attributes: `status`, `caption`, `label` – see the API table.*
 
 ### Events
 
@@ -199,11 +202,11 @@ No slots: everything it shows comes from its properties.
 
 ### TypeScript
 
-- **HTML:** With TypeScript or `// @ts-check`, `document.querySelector("tc-downloading")` returns a `TcDownloading` (the module adds the tag to `HTMLElementTagNameMap`). The class: `import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";`
-- **React / Next.js:** The element class: `import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";`
-- **Vue / Nuxt:** Add `import type {} from "@adamstavely/trenchcoat/vue";` to a `.d.ts` file: `vue-tsc` then checks the tag's props and `@tc-…` events in templates. A property's type: `TcDownloading["caption"]` with `import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";`
-- **Angular:** The directive types the template: `[caption]` takes `TcDownloading["caption"]`, and `$event` is the event's `CustomEvent<…>`, so a misspelt input or a wrong type fails the build. For the element itself, `#ref` with `exportAs` gives the directive and its `element`. `import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";`
-- **Svelte:** Add `import type {} from "@adamstavely/trenchcoat/svelte";` to a `.d.ts` file: `svelte-check` then knows the tag's props. Type `bind:this` with `import type { TcDownloading } from "@adamstavely/trenchcoat/downloading";`
+- **HTML:** With TypeScript or `// @ts-check`, `document.querySelector("tc-folder-status")` returns a `TcFolderStatus` (the module adds the tag to `HTMLElementTagNameMap`). The class: `import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";`
+- **React / Next.js:** The element class: `import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";`
+- **Vue / Nuxt:** Add `import type {} from "@adamstavely/trenchcoat/vue";` to a `.d.ts` file: `vue-tsc` then checks the tag's props and `@tc-…` events in templates. A property's type: `TcFolderStatus["status"]` with `import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";`
+- **Angular:** The directive types the template: `[status]` takes `TcFolderStatus["status"]`, and `$event` is the event's `CustomEvent<…>`, so a misspelt input or a wrong type fails the build. For the element itself, `#ref` with `exportAs` gives the directive and its `element`. `import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";`
+- **Svelte:** Add `import type {} from "@adamstavely/trenchcoat/svelte";` to a `.d.ts` file: `svelte-check` then knows the tag's props. Type `bind:this` with `import type { TcFolderStatus } from "@adamstavely/trenchcoat/folder-status";`
 
 ## Accessibility
 
@@ -213,8 +216,7 @@ Nothing to operate. The illustration takes no focus.
 
 ### Screen readers
 
-The host is `role="img"`, named by `label` or else by `caption`, so what's happening is announced. With `caption=""` and
-no `label` it's decorative and skipped, for when the words beside it say the same.
+The host is `role="img"`, named by `label` or else by its words, so where the folder stands is announced – and the name changes with `status`. With `caption=""` and no `label` it's decorative and skipped, for when the words beside it say the same.
 
 ### Every piece
 
@@ -257,13 +259,13 @@ no `label` it's decorative and skipped, for when the words beside it say the sam
 
 ## Performance
 
-*Measured 2026-11-13 in headless Chromium 156.0.8078.4 on Apple M4 Pro by `npm run measure:perf`. [What the numbers mean](../foundations/performance.md)*
+*Measured 2026-11-22 in headless Chromium 156.0.8078.4 on Apple M4 Pro by `npm run measure:perf`. [What the numbers mean](../foundations/performance.md)*
 
 ### Bundle
 
 | Part | Minified | Gzip |
 | --- | --- | --- |
-| **This piece alone** | 6.4 KB | 2.8 KB |
+| **This piece alone** | 10.7 KB | 4.0 KB |
 | Lit · the library every element is built on, the parts it uses | 18.4 KB | – |
 | `internal/card-head` · Shared Trenchcoat code | 2.3 KB | – |
 | `internal/base` · Shared Trenchcoat code | 1.8 KB | – |
@@ -271,8 +273,8 @@ no `label` it's decorative and skipped, for when the words beside it say the sam
 | `internal/controllers` · Shared Trenchcoat code | 0.7 KB | – |
 | `internal/look` · Shared Trenchcoat code | 0.4 KB | – |
 | `internal/styles` · Shared Trenchcoat code | 0.4 KB | – |
-| **Added to a page that already has Lit** | **13.7 KB** | **5.1 KB** |
-| With Lit – the first component on a page | 33.2 KB | 11.4 KB |
+| **Added to a page that already has Lit** | **18.0 KB** | **6.3 KB** |
+| With Lit – the first component on a page | 37.5 KB | 12.7 KB |
 
 *Shared code counts once per page: a second component that uses the same `internal/*` modules or renders the same elements adds only its own code. Shared rows show their share of the minified bundle; gzip only exists for whole files.*
 
@@ -280,9 +282,9 @@ no `label` it's decorative and skipped, for when the words beside it say the sam
 
 | Measure | Time | Details |
 | --- | --- | --- |
-| First render | **0.3 ms** | the gallery demo's data, 11 DOM nodes – to layout, median of 7 |
-| Typical update | **0.1 ms** | re-render with the same data |
-| First on the page | 11 ms | default properties; includes adding its CSS to the document |
+| First render | **0.5 ms** | the gallery demo's data, 6 DOM nodes – to layout, median of 7 |
+| Typical update | **0.2 ms** | re-render with the same data |
+| First on the page | 16 ms | default properties; includes adding its CSS to the document |
 
 *Render budget (smoke test, the gallery demo over 5 simulated seconds): none recorded – the default of 300 applies. It counts re-renders, so it catches a component that renders on every frame.*
 
@@ -300,25 +302,24 @@ no `label` it's decorative and skipped, for when the words beside it say the sam
 
 ## Content
 
-Say what's coming and where it'll land: "The quarterly audit export is on its way – it'll be in your downloads". Give a
-size or a time when you know it.
+Say what it means and what to do beside it: "Held for legal review. Ask Noor Haddad for access."
 
 ## Do and don't
 
 ### Do
 
-- Pair it with real progress when you have it – a bar or a percentage beside it.
-- Replace it with what came down, or with what went wrong, as soon as it's done.
+- Switch `status` on one element as the folder changes, rather than swapping elements.
+- Say who to ask about a locked folder.
 
 ### Don't
 
-- Don't leave it up after the download finished or failed; it says something's still happening.
-- Don't use it as a loading screen for a page; it's about a file.
+- Don't rely on it to keep a folder shut – a locked folder is your server's decision; this is a picture and words.
+- Don't use it as the only sign that a folder is shared, locked or restricted.
+- Don't use `restricted` for a lock, or `locked` for a classification – they mean different things.
 
 ## Related
 
-- [Uploading](uploading.md) – A document with an arrow rising out of a tray on it, with the words Uploading, for a file on its way up – the in-progress sibling of Upload Failed
-- [Upload Failed](upload-failed.md) – A file lifted above an open tray, its upload arrow stopping short, with a red cross badge and the words Upload failed, for a file that's too large, isn't accepted or didn't finish uploading
-- [Processing](processing.md) – A document with a progress ring on it, with the word Processing, for a long job that's still running – an export, a scan or a background task
-- [Pending Release](pending-release.md) – A document with an arrow ready to go up on it, with the words Pending release, for content approved and waiting for its release
-- [Released](released.md) – A document with a check on it and a few sparks around it, with the words Released, for content that's out and live
+- [Tray Status](tray-status.md) – A tray scene for where things stand – all done, nothing here yet, no matches, drop files to upload, new items (with a count), importing, import complete, imported with errors, export ready, sync complete, paused, upload failed or storage full – each with its own badge, colour, finite motion and words, which follow the status unless `caption` sets its own
+- [File Tree](../components/file-tree.md) – A project's files – folders that fold, a filter, an icon per kind of file and a Git status, with search inside files left to the page
+- [Share Panel](../components/share-panel.md) – Share with people and groups at a level for each – every recipient checked for entitlement first, with anyone not authorized flagged, the person sharing told, and left out of the share.
+- [Legal Hold Manager](../components/legal-hold-manager.md) – Which items are on legal hold, who placed each hold, why and until when – overdue reviews marked, items added, and Release only with a written reason
